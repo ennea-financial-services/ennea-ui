@@ -1,10 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  FaLandmark,
-  FaFileInvoiceDollar,
-  FaChartLine,
-  FaBuilding,
-} from "react-icons/fa";
 import { motion } from "framer-motion";
 import money from "../images/money.png"
 import user from "../images/user.png";
