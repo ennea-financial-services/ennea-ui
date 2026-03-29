@@ -1,0 +1,75 @@
+import React, { useEffect } from "react";
+import { Element, scroller } from "react-scroll";
+import { useLocation } from "react-router-dom";
+import Navbar from "../Components/Navbar";
+import Landing from "../Components/Landing";
+import AboutSection from "../Components/AboutSection";
+import ServicesSection from "../Components/ServicesSection";
+import ContactSection from "../Components/ContactSection";
+import Footer from "../Components/Footer";
+import Philosophy from "../Components/Philosophy";
+import AppAccessSection from "../Components/AppAccessSection";
+
+// import pattern from "../images/icons-bg.png";
+import pattern from "../images/icons-bg-demo.png";
+
+
+const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const target = location?.state?.scrollTo;
+    if (target) {
+      setTimeout(() => {
+        scroller.scrollTo(target, {
+          duration: 600,
+          smooth: true,
+          offset: -80,
+        });
+      }, 80);
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, [location]);
+
+  return (
+    <div className="overflow-x-hidden">
+      <Navbar />
+
+      {/* HERO — full screen, navbar overlays */}
+      <Element name="home">
+        <Landing />
+      </Element>
+
+      {/* REST OF CONTENT — offset for fixed navbar */}
+      <div
+        className=""
+        style={{
+          backgroundImage: `url(${pattern})`,
+          backgroundRepeat: "repeat",
+          backgroundPosition: "center top",
+          backgroundSize: "auto",
+        }}
+      >
+        <Element name="about">
+          <AboutSection />
+        </Element>
+
+        <Philosophy />
+
+        <Element name="services">
+          <ServicesSection />
+        </Element>
+
+        <AppAccessSection />
+
+        <Element name="contact">
+          <ContactSection />
+        </Element>
+
+        <Footer />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
