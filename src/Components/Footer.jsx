@@ -56,7 +56,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-white border-t border-gray-200 pt-16 md:pt-24 pb-10 px-6 sm:px-8 md:px-16 lg:px-24 lg:pt-32 bg-cover bg-center"
+      className="bg-white border-t border-gray-200 pt-16 md:pt-24 pb-10 px-6 sm:px-8 md:px-16 lg:px-32 lg:pt-32 bg-cover bg-center"
       style={{ backgroundImage: `url(${footerBg})` }}
     >
       {/* MAIN GRID */}

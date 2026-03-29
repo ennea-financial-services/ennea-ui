@@ -11,6 +11,11 @@ import user from "../images/user.png";
 import diversification from "../images/diversification.png";
 import equity from "../images/equity.png";
 import fixedIncomes from "../images/fixed-income.png";
+import bonds from "../images/bonds.png";
+import bonds2 from "../images/bonds-2.png";
+import promotion from "../images/promotion.png";
+import buildings from "../images/buildings.png";
+
 
 /* ================= ANIMATION ================= */
 
@@ -76,25 +81,25 @@ const services = [
 
 const fixedIncome = [
   {
-    icon: <FaLandmark className="text-deepblue text-4xl lg:text-5xl" />,
+    image: bonds,
     title: "Corporate Bonds",
     description:
       "High-quality debt instruments issued by corporates offering predictable income with defined maturities. Carefully selected to balance credit quality, yield and stability within a diversified portfolio.",
   },
   {
-    icon: <FaFileInvoiceDollar className="text-deepblue text-4xl lg:text-5xl" />,
+    image: bonds2,
     title: "Non-Convertible Debentures",
     description:
       "Structured debt securities providing regular income with fixed or floating returns. Suitable for investors seeking higher yields than traditional deposits while maintaining a defined risk framework.",
   },
   {
-    icon: <FaChartLine className="text-deepblue text-4xl lg:text-5xl" />,
+    image: promotion,
     title: "Market Linked Debentures",
     description:
       "Innovative instruments where returns are linked to underlying market indices or strategies. Designed for sophisticated investors aiming to enhance returns through structured exposure with controlled risk",
   },
   {
-    icon: <FaBuilding className="text-deepblue text-4xl lg:text-5xl" />,
+    image: buildings,
     title: "Corporate Fixed Deposits",
     description:
       "Term deposits offered by reputed corporates providing stable returns higher than bank FDs. Selected with a focus on issuer strength, tenure alignment and capital preservation.",
@@ -131,7 +136,7 @@ const ServicesSection = () => {
 
 
   return (
-    <section className="py-20 px-5 md:px-12 lg:px-20 lg:mx-20 my-16 font-satoshi">
+    <section className="py-20 px-5 md:px-12 lg:px-10 lg:mx-20 my-16 font-satoshi">
 
       {/* Heading */}
       <motion.div
@@ -251,8 +256,25 @@ const ServicesSection = () => {
           {fixedIncome.map((item, index) => (
             <motion.div key={index} variants={fadeUp} className="flex flex-col gap-4">
 
-              <div className="flex flex-col">
+              <div className="flex flex-col items-start">
+                <div className="mb-6 justify-start 
+  p-3 sm:p-4 md:p-4
+  bg-offwhite 
+  rounded-xl md:rounded-2xl 
+  shadow-md md:shadow-lg">
 
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="
+      w-8 h-8
+      sm:w-10 sm:h-10
+      md:w-10 md:h-10-
+      object-contain
+    "
+                    loading="lazy"
+                  />
+                </div>
                 <div className="lg:min-h-[70px]">
                   <h4 className="font-semibold lg:text-2xl text-xl leading-snug">
                     {item.title}

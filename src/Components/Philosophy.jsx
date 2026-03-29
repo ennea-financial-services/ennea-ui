@@ -173,7 +173,7 @@ const Philosophy = () => {
               >
                 <motion.div
                   variants={cardAnimation}
-                  className="rounded-3xl p-6 sm:p-8 md:p-12 lg:p-14 flex flex-col gap-5 border border-white/80 backdrop-blur-sm min-h-[650px] md:min-h-[560px] lg:min-h-[540px]"
+                  className="rounded-3xl p-6 sm:p-8 md:p-12 lg:p-14 flex flex-col gap-5 border border-white/80 backdrop-blur-sm min-h-[650px] md:min-h-[560px] lg:min-h-[570px]"
                 >
                   <div className="w-fit bg-white p-3 rounded-lg">
                     {step.icon}
