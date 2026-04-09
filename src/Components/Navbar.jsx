@@ -307,17 +307,17 @@ const Navbar = () => {
               {/* Login */}
               <button
                 onClick={() => setMobileLoginOpen(!mobileLoginOpen)}
-                className={`flex justify-between items-center w-full transition-all duration-200 ${mobileLoginOpen ? "text-white font-extrabold" : ""
+                className={`flex justify-between items-center w-full transition-all duration-200 ${mobileLoginOpen ? "text-deepblue font-bold" : ""
                   }`}
               >
                 Login
                 {mobileLoginOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
               </button>
-
               {mobileLoginOpen && (
-                <div className="space-y-3">
 
-                  <button
+                <div className="space-y-3 ">
+
+                  {/* <button
                     onClick={() => {
                       setInvestorOpen(!investorOpen);
                       setEmployeeOpen(false);
@@ -327,24 +327,24 @@ const Navbar = () => {
                   >
                     Investor Login
                     {investorOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </button> */}
+                  
+                  <button
+                    onClick={() => {
+                      window.open("https://invest.enneafinancialservices.com/", "_blank");
+                      setMobileOpen(false);
+                    }}
+                    className="mt-5 mb-5 flex justify-between items-center w-full text-black"
+                  >
+                    Investor Login <GoArrowUpRight />
                   </button>
-
-                  {investorOpen && (
-                    <>
-                      <hr className=" border-gray-300" />
-                      <Link
-                        to="https://invest.enneafinancialservices.com/"
-                        className=" hover:text-deepblue flex justify-between font-semibold"> Portfolio  <GoArrowUpRight />
-                      </Link>
-                      <hr className=" border-gray-300" /></>
-                  )}
 
                   <button
                     onClick={() => {
                       setEmployeeOpen(!employeeOpen);
                       setInvestorOpen(false);
                     }}
-                    className={` flex justify-between items-center w-full transition-all duration-200 ${employeeOpen ? "text-white font-bold" : ""
+                    className={`text-black flex justify-between items-center w-full transition-all duration-200 ${employeeOpen ? "text-black font-bold" : ""
                       }`}
                   >
                     Employee Login
@@ -354,37 +354,37 @@ const Navbar = () => {
 
 
                   {employeeOpen && (
-                    <div className="space-y-3">
-                      <hr className=" border-gray-300" />
+                    <div className="space-y-3 ">
+                      <hr />
                       <Link
                         to="https://invest.enneafinancialservices.com/"
                         className=" hover:text-deepblue flex justify-between font-semibold"> IFA Now <GoArrowUpRight />
                       </Link>
-                      <hr className=" border-gray-300" />
+                      <hr />
                       <Link
                         to="https://www.nseinvest.com/nsemfdesk/login.htm](https://www.nseinvest.com/nsemfdesk/login.htm"
                         className=" hover:text-deepblue flex justify-between font-semibold"> NSE  <GoArrowUpRight />
-                      </Link> <hr className="my-2 border-gray-300" />
+                      </Link>  <hr />
                       <Link
                         to="https://masterstrokeonline.com/login"
                         className=" hover:text-deepblue flex justify-between font-semibold"> Masterstroke  <GoArrowUpRight />
                       </Link>
-                      <hr className=" border-gray-300" />
+                      <hr />
                       <Link
                         to="https://edge360.camsonline.com/signin"
                         className=" hover:text-deepblue flex justify-between font-semibold"> Cams <GoArrowUpRight />
                       </Link>
-                      <hr className=" border-gray-300" />
+                      <hr />
                       <Link
                         to="https://mfs.kfintech.com/mfs/distributor/distributor_Login.aspx"
                         className=" hover:text-deepblue flex justify-between font-semibold"> KFintech <GoArrowUpRight />
                       </Link>
-                      <hr className=" border-gray-300" />
+                      <hr />
                       <Link
                         to="https://www.mfuonline.com/"
                         className=" hover:text-deepblue flex justify-between font-semibold"> MF Utilities <GoArrowUpRight />
                       </Link>
-                      <hr className=" border-gray-300" />
+                      <hr />
                       <Link
                         to="https://partners.nuvamawealth.com/FPD/Login.aspx"
                         className=" hover:text-deepblue flex justify-between font-semibold"> Nuvama Wealth <GoArrowUpRight />

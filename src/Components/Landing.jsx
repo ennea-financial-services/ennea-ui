@@ -93,7 +93,7 @@ const Landing = () => {
   };
 
   return (
-    <section className="border border-black relative w-full font-satoshi">
+    <section className="relative w-full font-satoshi">
 
       {/* ================= MOBILE HERO ================= */}
 

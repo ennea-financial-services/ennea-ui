@@ -79,22 +79,22 @@ const Footer = () => {
           </div>
 
           {/* Map */}
-          {/* <div className="w-full rounded-2xl overflow-hidden shadow-md">
+          <div className="w-full rounded-2xl overflow-hidden shadow-md">
             <iframe
               title="Ennea Financial Services Location Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1885.8113783504286!2d72.8474631!3d19.0363379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c92b34968cbd%3A0xa443923aaf1e0f37!2sNational%20Storage%20Building%2C%20New%20Dinkar%20Co%20Operative%20Housing%20Society%2C%20Mahim%2C%20Mumbai%2C%20Maharashtra%20400016!5e0!3m2!1sen!2sin!4v1767726636571!5m2!1sen!2sin"
               className="w-full h-[200px] md:h-[230px] border-0"
               loading="lazy"
             />
-          </div> */}
-          <div className="w-full mt-6 flex flex-col lg:items-start items-center text-center">
+          </div>
+          {/* <div className="w-full mt-6 flex flex-col lg:items-start items-center text-center">
 
-            {/* Title */}
+            
             <h5 className="text-xl lg:mb-6 md:text-2xl font-bold text-deepblue mb-4">
               Our Location
             </h5>
 
-            {/* Button */}
+            
             <a
               href="https://www.google.com/maps?q=19.0363379,72.8474631"
               target="_blank"
@@ -104,7 +104,7 @@ const Footer = () => {
               View on Google Maps →
             </a>
 
-          </div>
+          </div> */}
         </div>
 
         {/* COMPANY */}
