@@ -11,7 +11,6 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const [mobileLoginOpen, setMobileLoginOpen] = useState(false);
-  const [investorOpen, setInvestorOpen] = useState(false);
   const [employeeOpen, setEmployeeOpen] = useState(false);
 
   const [showNavbar, setShowNavbar] = useState(true);
@@ -342,7 +341,6 @@ const Navbar = () => {
                   <button
                     onClick={() => {
                       setEmployeeOpen(!employeeOpen);
-                      setInvestorOpen(false);
                     }}
                     className={`text-black flex justify-between items-center w-full transition-all duration-200 ${employeeOpen ? "text-black font-bold" : ""
                       }`}
