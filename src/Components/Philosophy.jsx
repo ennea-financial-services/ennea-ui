@@ -45,21 +45,21 @@ const steps = [
     id: 1,
     label: "Client-Centric Approach",
     title:
-      "Our clients are at the core of everything we do. We operate with complete autonomy, enabling us to deliver unbiased advice and objective recommendations that serve only one purpose — your best interest. Every strategy we design is guided by clarity and open communication, ensuring that you are fully informed and confident at every step of your financial journey. We take the time to understand your goals, risk appetite, and long-term vision, crafting solutions that are both strategic and adaptive to market dynamics. Through regular review, meticulous research, and disciplined execution, we help you navigate the complexities of wealth creation and preservation.",
+      "Our clients are at the core of everything we do. We operate with complete autonomy, enabling us to deliver unbiased advice and objective recommendations that serve only one purpose — your best interest. Every strategy we design is guided by clarity and open communication, ensuring that you are fully informed and confident at every step of your financial journey. We take the time to understand your goals, risk appetite and long-term vision, crafting solutions that are both strategic and adaptive to market dynamics. Through regular review, meticulous research and disciplined execution, we help you navigate the complexities of wealth creation and preservation.",
     icon: <TbUserStar className="text-deepblue text-3xl md:text-6xl" />,
   },
   {
     id: 2,
     label: "Growth Through Value Creation",
     title:
-      "We provide high-quality, personalized service that meets your' evolving needs. We have an open architecture platform where we collaborate with leading industry experts to give you access to best-in-class products and services. We Stay up-to-date with market trends, research, and best practices to offer innovative solutions. We do not manufacture any products to ensure that we offer unbiased investment services. We Prioritize sustainable, long-term growth over short-term gains.",
+      "We provide high-quality and personalized service that meets your evolving needs. We have an open architecture platform where we collaborate with leading industry experts to give you access to best-in-class products and services. We stay up-to-date with market trends, research and best practices to offer innovative solutions. We do not curate any products to ensure that we offer unbiased investment services. We prioritize sustainable and long-term growth over short-term gains.",
     icon: <PiChartLineUpBold className="text-deepblue text-3xl md:text-6xl" />,
   },
   {
     id: 3,
     label: "Client Empowerment",
     title:
-      "We empower clients with timely market insights and knowledge to inform their financial decisions. Through collaborative partnerships, we craft customized solutions that align with their unique goals. With a commitment to client success, we continually refine our approach to try deliver exceptional outcomes.",
+      "We empower clients with timely market insights their financial decisions. Through collaborative partnerships, we craft customized solutions that align with their unique goals. With a commitment to client success, we continually refine our approach to try deliver exceptional outcomes.",
     icon: <PiUserCircleCheck className="text-deepblue text-3xl md:text-6xl" />,
   },
   {

@@ -65,7 +65,7 @@ const AppAccessSection = () => {
             variants={fadeUp}
             className="font-satoshi text-base sm:text-base md:text-lg lg:text-xl font-medium mb-6 md:mb-10"
           >
-            Download The My Planner - Finance Solved App Today
+            Download My Planner App Today
           </motion.p>
 
           {/* STORE BUTTONS */}

@@ -7,7 +7,7 @@ import HeroBg from "../images/landing-bg.jpg";
 import HeroMobile from "../images/landing-bg.jpg";
 
 const texts = [
-  "Empowering smarter financial Decisions",
+  "Empowering Smarter Financial Decisions",
   "Building Long-Term Wealth Creation",
 ];
 

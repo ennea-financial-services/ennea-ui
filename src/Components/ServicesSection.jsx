@@ -49,25 +49,25 @@ const services = [
     image: money,
     title: "Mutual Funds",
     description:
-      "Mutual funds can be a powerful tool for long-term wealth creation when guided by expertise and discipline. Our investment approach cuts through market noise, focusing on a structured, time-tested philosophy that prioritizes your goals, risk profile, and aspirations. We combine in-depth analysis with careful fund selection, seeking out managers with a proven track record of consistency and conviction. The result is a curated portfolio designed for stability, resilience, and sustainable growth – helping you build wealth with confidence",
+      "Mutual funds can be a powerful tool for long-term wealth creation when guided by expertise and discipline. Our investment approach cuts through market noise, focusing on a structured and time-tested philosophy that prioritizes your goals, risk profile and aspirations. We combine in-depth analysis with careful fund selection, seeking out managers with a proven track record of consistency and conviction. The result is a curated portfolio designed for stability, resilience, and sustainable growth – helping you build wealth with confidence.",
   },
   {
     image: user,
     title: "Portfolio Management Services",
     description:
-      "We offer exclusive access to top-tier Portfolio Management Services (PMS) through partnerships with seasoned investment managers. These experts employ disciplined, research-driven strategies that have consistently delivered results across market cycles. The PMS approach focuses on bottom-up stock selection, driven by in-depth analysis and prudent diversification. For ambitious investors, we cherry pick select PMS strategies which target emerging opportunities with strong fundamentals and governance. PMS is typically designed for discerning investors seeking concentration in stocks for long term wealth creation. ",
+      "We offer exclusive access to top-tier portfolio management services (PMS) through partnerships with seasoned investment managers. These experts employ disciplined and research-driven strategies that have consistently delivered results across market cycles. The PMS approach focuses on bottom-up stock selection, driven by in-depth analysis and prudent diversification. For ambitious investors, we cherry-pick select PMS strategies, which target emerging opportunities with strong fundamentals and governance. PMS is typically designed for discerning investors, seeking concentration in stocks for long term wealth creation. ",
   },
   {
     image: diversification,
     title: "Alternative Investment Funds",
     description:
-      "We provide access to select Alternative Investment Funds through exclusive partnerships with reputed fund managers. These strategies seek to enhance portfolio diversification and risk-adjusted returns by capitalising on opportunities across infrastructure, real assets, commodities, and market inefficiencies. Select offerings also follow structured, lower-volatility approaches aimed at delivering returns superior to traditional fixed-income solutions. Our chosen AIF strategies are curated for discerning investors seeking differentiated strategies, stability, and long-term value creation.",
+      "We provide access to select alternative investment funds (AIF) through exclusive partnerships with reputed fund managers. These strategies seek to enhance portfolio diversification and risk-adjusted returns by capitalizing on opportunities across infrastructure, real assets, commodities and market inefficiencies. Select offerings also follow structured and lower-volatility approaches aimed at delivering returns superior to traditional fixed-income solutions. Our chosen AIF strategies are curated for discerning investors, seeking differentiated strategies, stability and long-term value creation.",
   },
   {
     image: equity,
     title: "Private Equity Funds",
     description:
-      "We offer access to select Private Equity funds through exclusive partnerships with seasoned investment managers. These funds invest across early-stage technology ventures with high growth potential as well as mature businesses raising growth capital to scale operations and expand market presence. Select investments may also benefit from planned value-unlocking events including potential public market listings. With active involvement, strategic guidance and institutional expertise these Private Equity strategies are curated for investors seeking enhanced long-term returns through ownership in rapidly expanding businesses beyond listed markets.",
+      "We offer access to select private equity funds through exclusive partnerships with seasoned investment managers. These funds invest in early-stage technology ventures with high growth potential, as well as in mature businesses raising growth capital to scale operations and expand market presence. Select investments may also benefit from planned value-unlocking events, including potential public market listings. With active involvement, strategic guidance and institutional expertise, these private equity strategies are curated for investors seeking enhanced long-term returns through ownership in rapidly expanding businesses beyond listed markets.",
   },
 ];
 
@@ -90,11 +90,11 @@ const fixedIncome = [
     image: promotion,
     title: "Market Linked Debentures",
     description:
-      "Innovative instruments where returns are linked to underlying market indices or strategies. Designed for sophisticated investors aiming to enhance returns through structured exposure with controlled risk",
+      "Innovative instruments where returns are linked to underlying market indices or strategies. Designed for sophisticated investors aiming to enhance returns through structured exposure with controlled risk.",
   },
   {
     image: buildings,
-    title: "Corporate Fixed Deposits",
+    title: "Corporate Fixed Deposits (FD)",
     description:
       "Term deposits offered by reputed corporates providing stable returns higher than bank FDs. Selected with a focus on issuer strength, tenure alignment and capital preservation.",
   },

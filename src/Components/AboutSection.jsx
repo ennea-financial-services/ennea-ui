@@ -66,8 +66,8 @@ const AboutSection = () => {
           variants={fadeUp}
           className="text-gray-800 font-normal mt-6 sm:text-2xl leading-relaxed text-justify"
         >
-          Established in 2024, ennea financial services, our name is inspired by
-          the greek word <span className="italic">“ennea”</span>, meaning nine —
+          Established in 2024, Ennea Financial Services, our name is inspired by
+          the Greek word <span className="italic">“ennea”</span>, meaning nine —
           A number symbolizing completeness, harmony, and spiritual awakening.
         </motion.p>
 
@@ -76,7 +76,7 @@ const AboutSection = () => {
           className="text-gray-800 sm:text-2xl leading-relaxed text-justify font-normal mt-4"
         >
           We embody these principles, striving for wholeness in our approach to wealth 
-          management and fostering long term relationship built on trust. Our bespoke 
+          management and fostering long-term relationship built on trust. Our bespoke 
           investment solutions are designed to help clients achieve their unique goals, 
           whether that's building wealth, securing financial freedom, or creating a 
           lasting legacy. Our open-architecture platform allows us to curate the best 
@@ -89,13 +89,10 @@ const AboutSection = () => {
         >
           With a deep understanding of the complexities of financial markets, 
           our multifaceted team brings wisdom, integrity, and expertise to help 
-          clients achieve their financial goals. Our team boasts over 40 years of 
+          clients achieve their financial goals. Our team boasts of over 40 years of 
           combined financial experience. We adhere to global best practices in wealth 
           management, offering tailored advice that balances global perspectives 
           with Indian market insights.
-          We adhere to global best practices in wealth management, offering
-          tailored advice that balances global perspectives with Indian market
-          insights.
         </motion.p>
 
         {/* <motion.p
