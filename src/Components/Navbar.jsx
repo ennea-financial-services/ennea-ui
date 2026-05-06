@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { GoArrowUpRight } from "react-icons/go";
 import logo2 from "../images/logo-dummy.png";
-import { scroller } from "react-scroll";
+import { scroller } from "react-scroll"
 
 const Navbar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -18,6 +18,11 @@ const Navbar = () => {
   const lastScrollY = useRef(0);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isDisclosurePage = location.pathname === "/disclosure";
+  const baseText = "text-deepblue";
+  const hoverText = isDisclosurePage ? "hover:text-black" : "hover:text-white";
+  const activeText = isDisclosurePage ? "text-black" : "text-white";
 
   const scrollOrNavigateTo = (targetName) => {
     const offsetValue = -80;
@@ -154,12 +159,22 @@ const Navbar = () => {
           </button>
 
           {loginOpen && (
-            <div className="bg-white/10 backdrop-blur-xl absolute right-0 mt-11 w-64 rounded-lg p-6 text-deepblue font-bold text-lg">
+            <div
+              className={`absolute right-0 mt-11 w-64 rounded-lg p-6 text-deepblue font-bold text-lg
+    ${isDisclosurePage
+                  ? "bg-white shadow-md border border-gray-100"
+                  : "bg-white/10 backdrop-blur-3xl"
+                }
+  `} >
               <div
                 onClick={() => setSubmenu("investor")}
 
-                className={`px-3 py-2 hover:text-white flex justify-between cursor-pointer transition-all duration-200 ${submenu === "investor" ? "text-white font-extrabold" : ""
-                  }`}
+                className={`px-3 py-2 flex justify-between cursor-pointer transition-all duration-200
+  ${submenu === "investor"
+    ? `${activeText} font-extrabold`
+    : `${baseText} ${hoverText}`
+  }
+`}
               >
                 Investor Login <GoArrowUpRight />
               </div>
@@ -168,8 +183,12 @@ const Navbar = () => {
 
               <div
                 onClick={() => setSubmenu("employee")}
-                className={`px-3 py-2 hover:text-white flex justify-between cursor-pointer transition-all duration-200 ${submenu === "employee" ? "text-white font-extrabold" : ""
-                  }`}
+                className={`px-3 py-2 flex justify-between cursor-pointer transition-all duration-200
+  ${submenu === "employee"
+    ? `${activeText} font-extrabold`
+    : `${baseText} ${hoverText}`
+  }
+`}
               >
                 Employee Login <GoArrowUpRight />
               </div>
@@ -177,14 +196,25 @@ const Navbar = () => {
           )}
 
           {submenu && (
-            <div className="bg-white/20 backdrop-blur-xl absolute right-0 mt-52 w-64 rounded-lg p-6 text-deepblue font-bold text-lg">
+            <div
+              className={`absolute right-0 mt-52 w-64 rounded-lg p-6 text-deepblue font-bold text-lg
+    ${isDisclosurePage
+                  ? "bg-white shadow-md border border-gray-100"
+                  : "bg-white/10 backdrop-blur-3xl"
+                }
+  `}
+            >
               {submenu === "investor" && (
-                <><Link
-                  to="https://invest.enneafinancialservices.com/"
-                  className="hover:text-white flex justify-between"
+                <><a
+                  href="https://invest.enneafinancialservices.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`px-3 flex justify-between font-semibold
+  ${hoverText}
+`}
                 >
                   Portfolio <GoArrowUpRight />
-                </Link></>
+                </a></>
 
               )}
 
@@ -199,39 +229,67 @@ const Navbar = () => {
               )} */}
               {submenu === "employee" && (
                 <>
-                  <Link
-                    to="https://invest.enneafinancialservices.com/"
-                    className=" px-3 py-2 hover:text-white flex justify-between font-semibold"> IFA Now <GoArrowUpRight />
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://invest.enneafinancialservices.com/"
+                    className={`px-3 py-2 flex justify-between font-semibold
+  ${hoverText}
+`}> IFA Now <GoArrowUpRight />
+                  </a>
                   <hr className="my-2 border-gray-300" />
-                  <Link
-                    to="https://www.nseinvest.com/nsemfdesk/login.htm"
-                    className="px-3 py-2 hover:text-white flex justify-between font-semibold"> NSE  <GoArrowUpRight />
-                  </Link> <hr className="my-2 border-gray-300" />
-                  <Link
-                    to="https://masterstrokeonline.com/login"
-                    className="px-3 py-2 hover:text-white flex justify-between font-semibold"> Masterstroke  <GoArrowUpRight />
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.nseinvest.com/nsemfdesk/login.htm"
+                    className={`px-3 py-2 flex justify-between font-semibold transition-all duration-200
+  ${hoverText}
+`}> NSE  <GoArrowUpRight />
+                  </a> <hr className="my-2 border-gray-300" />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://masterstrokeonline.com/login"
+                    className={`px-3 py-2 flex justify-between font-semibold transition-all duration-200
+  ${hoverText}
+`}> Masterstroke  <GoArrowUpRight />
+                  </a>
                   <hr className="my-2 border-gray-300" />
-                  <Link
-                    to="https://edge360.camsonline.com/signin"
-                    className="px-3 py-2 hover:text-white flex justify-between font-semibold"> Cams <GoArrowUpRight />
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://edge360.camsonline.com/signin"
+                    className={`px-3 py-2 flex justify-between font-semibold transition-all duration-200
+  ${hoverText}
+`}> Cams <GoArrowUpRight />
+                  </a>
                   <hr className="my-2 border-gray-300" />
-                  <Link
-                    to="https://mfs.kfintech.com/mfs/distributor/distributor_Login.aspx"
-                    className="px-3 py-2 hover:text-white flex justify-between font-semibold"> KFintech <GoArrowUpRight />
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://mfs.kfintech.com/mfs/distributor/distributor_Login.aspx"
+                    className={`px-3 py-2 flex justify-between font-semibold transition-all duration-200
+  ${hoverText}
+`}> KFintech <GoArrowUpRight />
+                  </a>
                   <hr className="my-2 border-gray-300" />
-                  <Link
-                    to="https://www.mfuonline.com/"
-                    className="px-3 py-2 hover:text-white flex justify-between font-semibold"> MF Utilities <GoArrowUpRight />
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.mfuonline.com/"
+                    className={`px-3 py-2 flex justify-between font-semibold transition-all duration-200
+  ${hoverText}
+`}> MF Utilities <GoArrowUpRight />
+                  </a>
                   <hr className="my-2 border-gray-300" />
-                  <Link
-                    to="https://partners.nuvamawealth.com/FPD/Login.aspx"
-                    className="px-3 py-2 hover:text-white flex justify-between font-semibold"> Nuvama Wealth <GoArrowUpRight />
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://partners.nuvamawealth.com/FPD/Login.aspx"
+                    className={`px-3 py-2 flex justify-between font-semibold transition-all duration-200
+  ${hoverText}
+`}> Nuvama Wealth <GoArrowUpRight />
+                  </a>
                 </>
               )}
             </div>
@@ -327,7 +385,7 @@ const Navbar = () => {
                     Investor Login
                     {investorOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                   </button> */}
-                  
+
                   <button
                     onClick={() => {
                       window.open("https://invest.enneafinancialservices.com/", "_blank");
@@ -354,39 +412,53 @@ const Navbar = () => {
                   {employeeOpen && (
                     <div className="space-y-3 ">
                       <hr />
-                      <Link
-                        to="https://invest.enneafinancialservices.com/"
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://invest.enneafinancialservices.com/"
                         className=" hover:text-deepblue flex justify-between font-semibold"> IFA Now <GoArrowUpRight />
-                      </Link>
+                      </a>
                       <hr />
-                      <Link
-                        to="https://www.nseinvest.com/nsemfdesk/login.htm](https://www.nseinvest.com/nsemfdesk/login.htm"
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.nseinvest.com/nsemfdesk/login.htm"
                         className=" hover:text-deepblue flex justify-between font-semibold"> NSE  <GoArrowUpRight />
-                      </Link>  <hr />
-                      <Link
-                        to="https://masterstrokeonline.com/login"
+                      </a>  <hr />
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://masterstrokeonline.com/login"
                         className=" hover:text-deepblue flex justify-between font-semibold"> Masterstroke  <GoArrowUpRight />
-                      </Link>
+                      </a> <hr />
                       <hr />
-                      <Link
-                        to="https://edge360.camsonline.com/signin"
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://edge360.camsonline.com/signin"
                         className=" hover:text-deepblue flex justify-between font-semibold"> Cams <GoArrowUpRight />
-                      </Link>
+                      </a>
                       <hr />
-                      <Link
-                        to="https://mfs.kfintech.com/mfs/distributor/distributor_Login.aspx"
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://mfs.kfintech.com/mfs/distributor/distributor_Login.aspx"
                         className=" hover:text-deepblue flex justify-between font-semibold"> KFintech <GoArrowUpRight />
-                      </Link>
+                      </a>
                       <hr />
-                      <Link
-                        to="https://www.mfuonline.com/"
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.mfuonline.com/"
                         className=" hover:text-deepblue flex justify-between font-semibold"> MF Utilities <GoArrowUpRight />
-                      </Link>
+                      </a>
                       <hr />
-                      <Link
-                        to="https://partners.nuvamawealth.com/FPD/Login.aspx"
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://partners.nuvamawealth.com/FPD/Login.aspx"
                         className=" hover:text-deepblue flex justify-between font-semibold"> Nuvama Wealth <GoArrowUpRight />
-                      </Link>
+                      </a>
                     </div>
                   )}
 
