@@ -8,7 +8,7 @@ import HeroMobile from "../images/landing-bg.jpg";
 
 const texts = [
   "Empowering Smarter Financial Decisions",
-  "Building Long-Term Wealth Creation",
+  "Building Long-Term Relationships",
 ];
 
 /* Animation Variants */
