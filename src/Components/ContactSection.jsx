@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FiArrowRight, FiLoader } from "react-icons/fi";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 /* ================= ANIMATION ================= */
 
@@ -43,9 +44,13 @@ const ContactSection = () => {
     email: "",
     phone: "",
     message: "",
+    website: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef(null);
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -65,12 +70,20 @@ const ContactSection = () => {
       return;
     }
 
+    if (!turnstileToken) {
+      toast.error("Please complete the security verification.");
+      return;
+    }
+
     try {
       setIsSubmitting(true);
 
       const response = await axios.post(
         `${process.env.REACT_APP_EMAIL_SERVER_URL}/api/send-email`,
-        formData
+        {
+          ...formData,
+          turnstileToken,
+        }
       );
 
       if (response.data.message) {
@@ -81,7 +94,10 @@ const ContactSection = () => {
           email: "",
           phone: "",
           message: "",
+          website: "",
         });
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error("Something went wrong, please try again.");
       }
@@ -168,15 +184,36 @@ const ContactSection = () => {
               required
               className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-deepblue focus:outline-none resize-none transition"
             />
+            <Turnstile
+              ref={turnstileRef}
+              siteKey={process.env.REACT_APP_TURNSTILE_SITE_KEY}
+              onSuccess={(token) => setTurnstileToken(token)}
+              onExpire={() => setTurnstileToken("")}
+              onError={() => setTurnstileToken("")}
+            />
 
+            <input
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              autoComplete="off"
+              tabIndex={-1}
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                left: "-9999px",
+                opacity: 0,
+                pointerEvents: "none",
+              }}
+            />
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full mt-2 bg-deepblue text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-all ${
-                isSubmitting
-                  ? "opacity-80 cursor-not-allowed"
-                  : "hover:opacity-90 hover:-translate-y-[2px]"
-              }`}
+              className={`w-full mt-2 bg-deepblue text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-all ${isSubmitting
+                ? "opacity-80 cursor-not-allowed"
+                : "hover:opacity-90 hover:-translate-y-[2px]"
+                }`}
             >
               {isSubmitting ? (
                 <>
